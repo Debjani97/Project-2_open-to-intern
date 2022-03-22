@@ -11,14 +11,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const mongoose = require('mongoose')
 
-mongoose.connect("", {useNewUrlParser: true})
-    .then(() => console.log('mongodb running on 27017'))
+mongoose.connect("mongodb+srv://debjani97:debjani97@cluster0.mxihy.mongodb.net/myProject2?authSource=admin&replicaSet=atlas-12zga8-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true", {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true})
+    .then(() => console.log('mongodb is conncected'))
     .catch(err => console.log(err))
 
-app.use('/functionup', route);
+app.use('/', route);
 
 app.listen(process.env.PORT || 3000, function() {
 	console.log('Express app running on port ' + (process.env.PORT || 3000))
 });
-
-
