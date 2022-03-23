@@ -3,6 +3,9 @@ const internmodel = require("../models/Intern.js")
 let validator =require("email-validator");
 
 
+/// CREATE COLLEGE............................................................................................
+
+
 const college = async function (req, res) {
     try {
          let college = req.body
@@ -37,7 +40,10 @@ const college = async function (req, res) {
 
   };
 
-  
+
+  /// CREATE Intern............................................................................................
+
+
   const intern = async function (req, res) {
      try {
           let intern = req.body
@@ -87,20 +93,8 @@ const college = async function (req, res) {
    };
 
 
-//    const getcollege = async function (req, res) {
-//      try {
-//          let coll_name = req.query.collegeName
-//          if(!coll_name) return res.status(400).send({status:false , message:"please enter collage name"})
-//          let data = await collegeModel.findOne({ name: coll_name })
-//          if (!data)  return res.status(403).send({ status: false, message:"The value is Invalid"});
-//          const C_id = data._id
-//          let internDetails = await internModel.find({ collegeId: C_id, isDeleted: false })
-//          res.send({ data: data, Interns: internDetails })
-//      } catch (err) {
-//      console.log(err)
-//      res.status(500).send({status: false, message:err.message})
-//  }
-//  }
+////....... GET COLLEGE DETAILS...................................................
+
 
 const getCollege = async function (req, res) {
      try{
